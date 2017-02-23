@@ -11,6 +11,8 @@ public class JourneyDetails
 	private WebElement roundTrip;
 	@FindBy(id="FromTag")
 	private WebElement from;
+	@FindBy(xpath="//a[@class='uiSelected']")
+	private WebElement suggestions;
 	@FindBy(id="ToTag")
 	private WebElement to;
 	@FindBy(id="DepartDate")
@@ -29,7 +31,7 @@ public class JourneyDetails
 	private WebElement classOfTravel;
 	@FindBy(id="AirlineAutocomplete")
 	private WebElement preferredAirline ;
-	@FindBy(id="SearchBtn")
+	@FindBy(xpath="//input[@id='SearchBtn']")
 	private WebElement searchFlights ;
 	
 	public JourneyDetails(WebDriver driver)
@@ -46,6 +48,10 @@ public class JourneyDetails
 	{
 		from.sendKeys(From);
 	}
+	public void suggestions() 
+	{
+		suggestions.click();
+	}
 	public void to(String To)
 	{
 		to.sendKeys(To);
@@ -58,17 +64,17 @@ public class JourneyDetails
 	{
 		returnOn.sendKeys(Return);
 	}
-	public void adults()
+	public WebElement adults()
 	{
-		adults.click();
+		return adults;
 	}
-	public void children()
+	public WebElement children()
 	{
-		children.click();
+		return children;
 	}
-	public void infants()
+	public WebElement infants()
 	{
-		infants.click();
+		return infants;
 	}
 	public void moreOption()
 	{
