@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
@@ -35,9 +36,9 @@ public class FlightBookingTest
 		//
 		JourneyDetails journeyDetails = new JourneyDetails(driver);
 		journeyDetails.roundTrip();
-		journeyDetails.from("pune");
+		journeyDetails.from("mum");
 		journeyDetails.suggestions();
-		journeyDetails.to("singa");
+		journeyDetails.to("ban");
 		journeyDetails.suggestions();
 		journeyDetails.departOn("25/02/2017");
 		journeyDetails.returnOn("3/03/2017");
@@ -48,10 +49,24 @@ public class FlightBookingTest
 		Select infants = new Select(journeyDetails.infants());
 		infants.selectByVisibleText("3");
 		journeyDetails.searchFlights();
-		driver.findElements(By.xpath("//button[@class='booking']")).get(0).click();
+		driver.findElements(By.xpath("//button[@type='submit']")).get(0).click();
+		driver.findElement(By.xpath("//input[@id='itineraryBtn']")).click();
+		driver.findElement(By.xpath("input[@id='username']")).sendKeys("vjjsvjh@gmail.com");
+		driver.findElement(By.xpath("//input[@id='LoginContinueBtn_1']")).click();
+		WebElement element = driver.findElement(By.id("AdultTitle1"));
+		Select select = new Select(element);
+		select.selectByVisibleText("Mr");
+		driver.findElement(By.id("AdultFname1")).sendKeys("vhjbjhsj");
+		driver.findElement(By.id("AdultLname1")).sendKeys("vjhbs");
+		driver.findElement(By.id("mobileNumber")).sendKeys("9632587412");
+		driver.findElement(By.id("travellerBtn")).click();
+		WebElement element1 = driver.findElement(By.id("paymentSubmit"));
+		if(element1.isDisplayed())
+		{
+			System.out.println("payment page display");
+		}
 		
 		
-		//FlightsSearchPage flightsearch = new FlightsSearchPage(driver);
 		
 		
 	}
