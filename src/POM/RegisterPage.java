@@ -12,7 +12,17 @@ public class RegisterPage
 	@FindBy(id="mkt_sbpt")
 	private WebElement checkBox;
 	@FindBy(id="registerButton")
-	private WebElement register;
+	private WebElement createAcc;
+	@FindBy(id="password")
+	private WebElement pwd;
+	@FindBy(id="profile_title")
+	private WebElement title;
+	@FindBy(xpath="//dd[@title='First name']")
+	private WebElement firstName;
+	@FindBy(xpath="//dd[@title='Last name']")
+	private WebElement lastName;
+	@FindBy(id="mobile_number")
+	private WebElement mobNumber;
 	
 	public RegisterPage(WebDriver driver)
 	{
@@ -27,8 +37,28 @@ public class RegisterPage
 	{
 		checkBox.click();
 	}
-	public void register() 
+	public void createAcc() 
 	{
-		register.click();
+		createAcc.click();
+	}
+	public void pwd(String password) 
+	{
+		pwd.sendKeys(password);
+	}
+	public void title() 
+	{
+		title.click();
+	}
+	public void firstName(String fN) 
+	{
+		firstName.sendKeys(fN);
+	}
+	public void lastName(String lN) 
+	{
+		lastName.sendKeys(lN);
+	}
+	public void mobNumber(String mobNo) 
+	{
+		mobNumber.sendKeys(mobNo);
 	}
 }

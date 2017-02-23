@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 
 import POM.HomePage;
+import POM.RegisterPage;
 
 public class Register_test 
 {
@@ -24,6 +25,11 @@ public class Register_test
 	public void test()
 	{
 		HomePage homepage = new HomePage(driver);
-		
+		homepage.yourTrip();
+		homepage.register();
+		RegisterPage registerPage = new RegisterPage(driver);
+		registerPage.emailId("");
+		registerPage.checkBox();
+		registerPage.createAcc();
 	}
 }
