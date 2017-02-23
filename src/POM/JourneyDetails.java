@@ -8,29 +8,29 @@ import org.openqa.selenium.support.PageFactory;
 public class JourneyDetails 
 {
 	@FindBy(id="RoundTrip")
-	public WebElement roundTrip;
+	private WebElement roundTrip;
 	@FindBy(id="FromTag")
-	public WebElement from;
+	private WebElement from;
 	@FindBy(id="ToTag")
-	public WebElement to;
+	private WebElement to;
 	@FindBy(id="DepartDate")
-	public WebElement departOn;
+	private WebElement departOn;
 	@FindBy(id="ReturnDate")
-	public WebElement returnOn;
+	private WebElement returnOn;
 	@FindBy(id="Adults")
-	public WebElement adults;
+	private WebElement adults;
 	@FindBy(id="Childrens")
-	public WebElement children;
+	private WebElement children;
 	@FindBy(id="Infants")
-	public WebElement infants;
+	private WebElement infants;
 	@FindBy(id="MoreOptionsLink")
-	public WebElement moreOption;
+	private WebElement moreOption;
 	@FindBy(id="Class")
-	public WebElement classOfTravel;
+	private WebElement classOfTravel;
 	@FindBy(id="AirlineAutocomplete")
-	public WebElement preferredAirline ;
+	private WebElement preferredAirline ;
 	@FindBy(id="SearchBtn")
-	public WebElement searchFlights ;
+	private WebElement searchFlights ;
 	
 	public JourneyDetails(WebDriver driver)
 	{
@@ -86,5 +86,4 @@ public class JourneyDetails
 	{
 		searchFlights.click();
 	}
-	
 }

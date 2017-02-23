@@ -1,5 +1,6 @@
 package flight_booking_test;
 
-public class FlightBookingTest {
-
+public class FlightBookingTest 
+{
+	
 }

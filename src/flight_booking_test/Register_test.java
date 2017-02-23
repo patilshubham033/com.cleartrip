@@ -4,7 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 
 import POM.HomePage;
@@ -28,8 +30,12 @@ public class Register_test
 		homepage.yourTrip();
 		homepage.register();
 		RegisterPage registerPage = new RegisterPage(driver);
-		registerPage.emailId("");
+		registerPage.emailId("shjsabhb@gmail.com");
 		registerPage.checkBox();
 		registerPage.createAcc();
+		registerPage.pwd("Shubham@33");
+		WebElement element = registerPage.title();
+		Select select = new Select(element);
+		System.out.println("svjv");
 	}
 }

@@ -23,6 +23,8 @@ public class RegisterPage
 	private WebElement lastName;
 	@FindBy(id="mobile_number")
 	private WebElement mobNumber;
+	@FindBy(id="signUpButton")
+	private WebElement crtAcc;
 	
 	public RegisterPage(WebDriver driver)
 	{
@@ -45,9 +47,9 @@ public class RegisterPage
 	{
 		pwd.sendKeys(password);
 	}
-	public void title() 
+	public WebElement title() 
 	{
-		title.click();
+		return title;
 	}
 	public void firstName(String fN) 
 	{
@@ -60,5 +62,9 @@ public class RegisterPage
 	public void mobNumber(String mobNo) 
 	{
 		mobNumber.sendKeys(mobNo);
+	}
+	public void crtAcc()
+	{
+		crtAcc.click();
 	}
 }
