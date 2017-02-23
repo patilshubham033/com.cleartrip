@@ -25,7 +25,9 @@ public class RegisterPage
 	private WebElement lastName;
 	@FindBy(id="mobile_number")
 	private WebElement mobNumber;
-	@FindBy(id="registerButton")
+	@FindBy(id="fb_xdm_frame_https")
+	private WebElement iframe1;
+	@FindBy(xpath="//dd/button")
 	private WebElement crtAcc;
 	
 	public RegisterPage(WebDriver driver)
@@ -68,6 +70,10 @@ public class RegisterPage
 	public void mobNumber(String mobNo) 
 	{
 		mobNumber.sendKeys(mobNo);
+	}
+	public WebElement iframe1()
+	{
+		return iframe1;
 	}
 	public void crtAcc()
 	{

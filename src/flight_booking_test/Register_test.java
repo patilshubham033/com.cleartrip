@@ -49,6 +49,8 @@ public class Register_test
 		registerPage.firstName("firstname");
 		registerPage.lastName("lastname");
 		registerPage.mobNumber("9595993008");
+		driver.switchTo().defaultContent();
+		//registerPage.checkBox();
 		registerPage.createAcc();
 		Reporter.log("sucessfully register", true);
 		
