@@ -35,9 +35,9 @@ public class FlightBookingTest
 		//
 		JourneyDetails journeyDetails = new JourneyDetails(driver);
 		journeyDetails.roundTrip();
-		journeyDetails.from("Mum");
+		journeyDetails.from("pune");
 		journeyDetails.suggestions();
-		journeyDetails.to("bang");
+		journeyDetails.to("singa");
 		journeyDetails.suggestions();
 		journeyDetails.departOn("25/02/2017");
 		journeyDetails.returnOn("3/03/2017");
@@ -48,6 +48,7 @@ public class FlightBookingTest
 		Select infants = new Select(journeyDetails.infants());
 		infants.selectByVisibleText("3");
 		journeyDetails.searchFlights();
+		driver.findElements(By.xpath("//button[@class='booking']")).get(0).click();
 		
 		
 		//FlightsSearchPage flightsearch = new FlightsSearchPage(driver);
