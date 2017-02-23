@@ -7,14 +7,32 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage 
 {
+	@FindBy(id="userAccountLink")
+	private WebElement yourTrip;
+	@FindBy(id="SignIn")
+	private WebElement signIn;
+	@FindBy(xpath="//a[text()='Register']")
+	private WebElement register;
 	@FindBy(xpath="//a[text()='Flights']")
-	public WebElement flight;
+	private WebElement flight;
 	
 	public HomePage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
+	public void yourTrip()
+	{
+		yourTrip.click();
+	}
+	public void signIn()
+	{
+		signIn.click();
+	}
+	public void register()
+	{
+		register.click();
+	}
 	public void flight()
 	{
 		flight.click();
