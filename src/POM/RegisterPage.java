@@ -19,13 +19,13 @@ public class RegisterPage
 	private WebElement pwd;
 	@FindBy(id="profile_title")
 	private WebElement title;
-	@FindBy(xpath="//dd[@title='First name']")
+	@FindBy(xpath="//input[@title='First name']")
 	private WebElement firstName;
-	@FindBy(xpath="//dd[@title='Last name']")
+	@FindBy(xpath="//input[@title='Last name']")
 	private WebElement lastName;
 	@FindBy(id="mobile_number")
 	private WebElement mobNumber;
-	@FindBy(id="signUpButton")
+	@FindBy(id="registerButton")
 	private WebElement crtAcc;
 	
 	public RegisterPage(WebDriver driver)
