@@ -23,19 +23,19 @@ public class Register_test
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
-	@Test
+	@org.testng.annotations.Test
 	public void test()
 	{
 		HomePage homepage = new HomePage(driver);
 		homepage.yourTrip();
 		homepage.register();
 		RegisterPage registerPage = new RegisterPage(driver);
+		driver.switchTo().frame(registerPage.iframe());
 		registerPage.emailId("shjsabhb@gmail.com");
 		registerPage.checkBox();
 		registerPage.createAcc();
 		registerPage.pwd("Shubham@33");
-		WebElement element = registerPage.title();
-		Select select = new Select(element);
+		Select select = new Select(registerPage.title());
 		System.out.println("svjv");
 	}
 }

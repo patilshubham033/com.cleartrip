@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegisterPage 
 {
+	@FindBy(id="modal_window")
+	private WebElement iframe;
 	@FindBy(id="username1")
 	private WebElement emailId;
 	@FindBy(id="mkt_sbpt")
@@ -31,6 +33,10 @@ public class RegisterPage
 		PageFactory.initElements(driver, this);
 	}
 	
+	public WebElement iframe()
+	{
+		return iframe;
+	}
 	public void emailId(String email)
 	{
 		emailId.sendKeys(email);
